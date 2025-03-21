@@ -1,0 +1,9 @@
+,C,class_weight,dual,fit_intercept,intercept_scaling,l1_ratio,max_iter,multi_class,n_jobs,penalty,random_state,solver,tol,verbose,warm_start,loss,algorithm,leaf_size,metric,metric_params,n_neighbors,p,weights,bootstrap,ccp_alpha,criterion,max_depth,max_features,max_leaf_nodes,max_samples,min_impurity_decrease,min_samples_leaf,min_samples_split,min_weight_fraction_leaf,monotonic_cst,n_estimators,oob_score
+Logistic Regression_df1,0.01,,False,True,1.0,,1000.0,deprecated,,l2,,lbfgs,0.0001,0.0,False,,,,,,,,,,,,,,,,,,,,,,
+Logistic Regression_df2,10.0,,False,True,1.0,,1000.0,deprecated,,l2,,lbfgs,0.0001,0.0,False,,,,,,,,,,,,,,,,,,,,,,
+LinearSVC_df1,1.0,,auto,True,1.0,,1000.0,ovr,,l2,,,0.0001,0.0,,squared_hinge,,,,,,,,,,,,,,,,,,,,,
+LinearSVC_df2,0.1,,auto,True,1.0,,1000.0,ovr,,l2,,,0.0001,0.0,,squared_hinge,,,,,,,,,,,,,,,,,,,,,
+Random Forest_df1,,,,,,,,,,,,,,0.0,False,,,,,,,,,True,0.0,gini,10.0,sqrt,,,0.0,4.0,5.0,0.0,,50.0,False
+Random Forest_df2,,,,,,,,,,,,,,0.0,False,,,,,,,,,True,0.0,gini,10.0,sqrt,,,0.0,4.0,10.0,0.0,,100.0,False
+KNN_df1,,,,,,,,,,,,,,,,,auto,30.0,euclidean,,11.0,2.0,uniform,,,,,,,,,,,,,,
+KNN_df2,,,,,,,,,,,,,,,,,auto,30.0,manhattan,,11.0,2.0,uniform,,,,,,,,,,,,,,
