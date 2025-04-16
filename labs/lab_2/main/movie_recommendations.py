@@ -7,28 +7,33 @@ from sklearn.metrics.pairwise import cosine_similarity
 import difflib
 
 
-# Skapa cache-mapp om den inte finns
-CACHE_DIR = os.path.join("labs", "lab_2", "cache")
-os.makedirs(CACHE_DIR, exist_ok=True)
+from pathlib import Path
+import pandas as pd
+import os
 
 
-def load_or_cache_csv(csv_path, pkl_path):
-    if os.path.exists(pkl_path):
+LAB_DIR = Path(__file__).resolve().parent.parent 
+DATA_DIR = LAB_DIR / "data"
+CACHE_DIR = LAB_DIR / "cache"
+
+CACHE_DIR.mkdir(exist_ok=True)
+
+def load_or_cache_csv(name: str) -> pd.DataFrame:
+    csv_path = DATA_DIR / f"{name}.csv"
+    pkl_path = CACHE_DIR / f"{name}.pkl"
+    if pkl_path.exists():
         return pd.read_pickle(pkl_path)
     else:
         df = pd.read_csv(csv_path)
         df.to_pickle(pkl_path)
         return df
 
+movies = load_or_cache_csv("movies")
+ratings = load_or_cache_csv("ratings")
+tags = load_or_cache_csv("tags")
 
-# Ladda data (med cache)
 
 
-movies = load_or_cache_csv(
-    "data/movies.csv", os.path.join(CACHE_DIR, "movies.pkl"))
-ratings = load_or_cache_csv(
-    "data/ratings.csv", os.path.join(CACHE_DIR, "ratings.pkl"))
-tags = load_or_cache_csv("data/tags.csv", os.path.join(CACHE_DIR, "tags.pkl"))
 
 
 def filter_users(ratings_df, min_ratings=100):
